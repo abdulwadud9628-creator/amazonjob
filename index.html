@@ -3,306 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U.S. Career Hub | Premium Hiring Portal</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Get Hired at Amazon - Apply Now & AI Assistant</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter for premium legible typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .amazon-bg-dark { background-color: #131921; }
+        .amazon-bg-navy { background-color: #232f3e; }
+        .amazon-orange { background-color: #ff9900; }
+        .amazon-orange-hover:hover { background-color: #e68a00; }
+        
+        /* Premium custom smooth curve on hero section matching Screenshot_5 */
+        .hero-curve {
+            position: relative;
+        }
+        .hero-curve::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: #ffffff;
+            clip-path: ellipse(60% 100% at 50% 100%);
+        }
 
+        /* Mobile sticky responsive adjustments */
+        .sticky-mobile { display: none; }
+        @media (max-width: 768px) {
+            .sticky-mobile { display: flex; }
+        }
+
+        /* Chat/AI Copilot Styles */
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(255, 153, 0, 0.15);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased pb-16 md:pb-0">
+
+    <!-- Global Target Link Setup -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            800: '#002159',
-                            900: '#00173d', // Primary Navy from Screenshot_7
-                            950: '#000c24',
-                        },
-                        gold: {
-                            400: '#ffca28',
-                            500: '#FFB800', // Primary Gold from Screenshot_8
-                            600: '#e6a600',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
+        const targetLink = "https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud";
+        function redirectToOffer() {
+            window.open(targetLink, '_blank');
         }
     </script>
 
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        .gold-gradient {
-            background: linear-gradient(135deg, #FFB800 0%, #FFD700 100%);
-        }
-
-        .gold-button {
-            background: linear-gradient(135deg, #FFB800 0%, #FFD700 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: #00173d;
-            font-weight: 800;
-        }
-
-        .gold-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(255, 184, 0, 0.5);
-        }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-        }
-
-        .job-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .job-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        .job-image-container {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .job-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .job-card:hover .job-image-container img {
-            transform: scale(1.1);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #00173d; border-radius: 10px; }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
-
-    <nav class="glass-nav fixed w-full z-[100] border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 bg-navy-900 rounded-xl flex items-center justify-center text-gold-500 shadow-xl">
-                        <i class="fas fa-briefcase text-xl"></i>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-black tracking-tighter text-navy-900 leading-none">SERVICE FINDER</span>
-                        <span class="text-[8px] font-black tracking-[0.3em] text-gold-600 uppercase">U.S. Career Portal</span>
-                    </div>
-                </div>
-                
-                <div class="hidden lg:flex items-center gap-10 text-[11px] font-extrabold text-navy-900/60 uppercase tracking-widest">
-                    <a href="#" class="hover:text-gold-600 transition-colors">Find Jobs</a>
-                    <a href="#" class="hover:text-gold-600 transition-colors">Companies</a>
-                    <a href="#" class="hover:text-gold-600 transition-colors">Resources</a>
-                    <a href="#" class="hover:text-gold-600 transition-colors">Salaries</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <button class="text-[11px] font-black text-navy-900 hidden sm:block uppercase tracking-widest px-4">Log In</button>
-                    <button class="gold-button px-7 py-3.5 rounded-xl text-[10px] uppercase tracking-widest shadow-lg">Post a Task</button>
-                </div>
+    <!-- -->
+    <!-- 1. Header Section -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Official style Brand Logo -->
+            <div class="flex items-center space-x-2">
+                <i class="fab fa-amazon text-2xl text-[#ff9900]"></i>
+                <span class="font-extrabold text-lg tracking-tight text-gray-900">Jobs<span class="text-[#ff9900]">Alert</span></span>
+                <span class="hidden sm:inline-block bg-green-100 text-green-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase ml-2 tracking-wide">● Active Onboarding</span>
             </div>
-        </div>
-    </nav>
-
-    <header class="relative bg-navy-900 pt-48 pb-32 overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <span class="inline-block py-2 px-6 rounded-full bg-white/5 border border-white/10 text-gold-500 text-[10px] font-black uppercase tracking-[0.4em] mb-8">
-                Nationwide Career Opportunities
-            </span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
-                We Get an <span class="text-gold-500 italic">experienced</span><br>service providers
-            </h1>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-12 font-medium">
-                Find the perfect career path with verified listings from the industry's most trusted agencies and federal departments.
-            </p>
-
-            <!-- Search Interface -->
-            <div class="max-w-4xl mx-auto bg-white p-2 rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row gap-2">
-                <div class="flex-1 flex items-center px-8 gap-4 border-b md:border-b-0 md:border-r border-slate-100 py-5 md:py-0">
-                    <i class="fas fa-search text-gold-500"></i>
-                    <input type="text" placeholder="Job title or keywords..." class="w-full focus:outline-none text-sm font-semibold placeholder:text-slate-400">
-                </div>
-                <div class="flex-1 flex items-center px-8 gap-4 py-5 md:py-0">
-                    <i class="fas fa-location-dot text-gold-500"></i>
-                    <select class="w-full focus:outline-none text-sm font-semibold bg-transparent cursor-pointer">
-                        <option>Nationwide (USA)</option>
-                        <option>Washington DC</option>
-                        <option>Remote (Work From Home)</option>
-                    </select>
-                </div>
-                <button class="gold-button px-12 py-5 rounded-[2rem] text-xs shadow-xl">
-                    SEARCH JOBS
-                </button>
-            </div>
+            
+            <!-- ✅ Requirement 1: Header Apply Now Button (Optimized with high z-index and native target link to fix clickability issues) -->
+            <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="relative z-50 pointer-events-auto cursor-pointer amazon-orange amazon-orange-hover text-black font-extrabold px-5 py-2.5 rounded text-sm transition shadow-sm flex items-center space-x-1 hover:scale-105">
+                <span>Apply Now</span>
+                <span>&rarr;</span>
+            </a>
         </div>
     </header>
 
-    <section id="jobs" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-600 text-[10px] font-black uppercase tracking-widest mb-6">
-                    <i class="fas fa-bolt"></i> HOT VACANCIES
+    <!-- -->
+    <!-- 2. Hero Section (Based on Screenshot_5.png) -->
+    <section class="amazon-bg-navy text-white pt-12 pb-20 px-4 hero-curve relative overflow-hidden">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 items-center relative z-10">
+            
+            <!-- Left Info Block -->
+            <div class="md:col-span-7 text-left">
+                <!-- Urgency warning pill -->
+                <div class="inline-flex items-center space-x-2 bg-black/30 border border-gray-700 px-3.5 py-1.5 rounded-full mb-5 text-xs text-orange-400 font-semibold">
+                    <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                    <span>⚠️ Only 23 positions remaining in your area!</span>
                 </div>
-                <h2 class="text-4xl md:text-6xl font-black text-navy-900 mb-6 tracking-tight">Discover New Horizons Yourself</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-lg font-medium">
-                    Explore high-growth opportunities with competitive pay and comprehensive benefits packages.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 
-                <!-- Job 1: USPS -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://about.usps.com/careers/global/images/job-PSE-clerk_careers-thumb.jpg" alt="USPS Clerk">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Government</div>
+                <!-- Ratings breakdown -->
+                <div class="flex items-center space-x-1.5 text-xs mb-3 text-gray-300">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star text-gray-400"></i>
                     </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">U.S. Postal Service</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Postal Service Clerk / Carrier</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Join the nation's most trusted delivery network. Full federal benefits and career stability included.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$21.50/hr</span>
-                            </div>
-                            <a href="https://www.af9m8trk.com/TCL11YFZ/WW8128AJ/?s1=FB_wadud" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
-                        </div>
+                    <span class="font-semibold">4.8/5 from 1,241 verified reviews</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-black mb-4 leading-tight">
+                    Get Hired at <span class="text-[#ff9900]">Amazon</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-extrabold text-emerald-400 mb-4">Starting at $18 - $25/hr+</p>
+                <p class="text-sm md:text-base text-gray-300 max-w-xl mb-6 leading-relaxed">
+                    Warehouse, delivery, remote & corporate roles available. Sign-on bonuses up to $3,000. Apply in under 60 seconds! No prior resume or background check is required to start validation.
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="text-xs text-gray-400 uppercase tracking-widest font-black">Offer Ends In:</span>
+                    <div class="flex space-x-1 font-mono text-sm font-extrabold text-[#ff9900] bg-black/40 px-3 py-1.5 rounded border border-gray-700">
+                        <span id="hours">02</span><span>:</span>
+                        <span id="minutes">48</span><span>:</span>
+                        <span id="seconds">35</span>
                     </div>
                 </div>
 
-                <!-- Job 2: Waste Management -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://media.licdn.com/dms/image/v2/C5622AQEfCVD8uG2Kpg/feedshare-shrink_800/feedshare-shrink_800/0/1679402792108?e=2147483647&v=beta&t=pOnk3LbWFCTSEEXoB-vzjfdZjOippwWfjFiB2vXBsfM" alt="Waste Management">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Urgent</div>
+                <!-- CTA Row -->
+                <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                    <!-- ✅ Requirement 2: Hero Section Main Button -->
+                    <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="amazon-orange amazon-orange-hover text-black text-center font-extrabold text-lg px-8 py-4 rounded-xl transition transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center space-x-2">
+                        <span>Apply Now — It's Free</span>
+                        <i class="fas fa-bolt text-sm"></i>
+                    </a>
+                    <a href="#application-form" class="bg-gray-800 hover:bg-gray-700 text-white text-center font-bold px-6 py-4 rounded-xl border border-gray-700 transition text-sm flex items-center justify-center space-x-2">
+                        <span>Check Eligibility</span>
+                        <i class="fas fa-chevron-down text-orange-400"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Visual Interactive Card Widget matching Amazon Job Profiles (Fixed medical photo with Amazon Warehouse and logistics images) -->
+            <div class="md:col-span-5 relative mt-6 md:mt-0">
+                <!-- Outer decorative shadow -->
+                <div class="absolute inset-0 bg-[#ff9900]/10 rounded-2xl filter blur-xl"></div>
+                
+                <!-- Job widget card with automatic slider matching Amazon jobs -->
+                <div class="relative bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl p-4 text-left">
+                    <!-- Premium visual representation overlay slider -->
+                    <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+                        <!-- Slide 1: Warehouse Operations -->
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-100">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Amazon Logistics Warehouse" 
+                                 class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow tracking-wider">
+                                🔥 Hot Position
+                            </span>
+                        </div>
+                        <!-- Slide 2: Package Sorting operations -->
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                            <img src="https://images.unsplash.com/photo-1566576912321-d58def7a3688?auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Amazon Sorting Operations" 
+                                 class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow tracking-wider">
+                                📦 Urgent Hiring
+                            </span>
+                        </div>
+                        <!-- Slide 3: Cargo and Onboarding Shelves -->
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+                            <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&w=600&h=400&q=80" 
+                                 alt="Amazon Distribution Onboarding" 
+                                 class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-blue-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow tracking-wider">
+                                🚚 Highly Demanded
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">Environmental Services</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Waste Management Driver</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Operate state-of-the-art logistics equipment. High safety standards and competitive annual bonuses.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$55k - $72k</span>
-                            </div>
-                            <a href="https://www.aplfb8trk.com/3NDLLF2P/CQ2CDBC/?source_id=FB&sub1=abir" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
-                        </div>
+
+                    <!-- Inner details with dynamic matching information -->
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 id="slide-role-title" class="font-extrabold text-base text-white transition-all duration-300">Fulfillment Associate</h4>
+                        <span id="slide-role-pay" class="text-emerald-400 font-black text-lg transition-all duration-300">$18–$22/hr</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 text-xs text-gray-400">
+                        <span><i class="fas fa-check-circle text-emerald-500 mr-1"></i> Verified Position</span>
+                        <span><i class="fas fa-check-circle text-emerald-500 mr-1"></i> Up to $3,000 Bonus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Progress / Eligibility Flow Section (Screenshot_5 Layout) -->
+    <section class="py-10 bg-white max-w-5xl mx-auto px-4">
+        <!-- Step progress indicator bar -->
+        <div class="mb-12 max-w-3xl mx-auto text-center">
+            <div class="flex justify-between text-xs font-bold text-gray-500 mb-2 px-1 uppercase tracking-widest">
+                <span>Step 1 of 3 - Eligibility Check ✓</span>
+                <span class="text-[#ff9900]">33% Complete</span>
+            </div>
+            <div class="w-full bg-gray-200 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full rounded-full transition-all duration-1000" style="width: 33%"></div>
+            </div>
+        </div>
+
+        <div class="text-center mb-8">
+            <span class="text-[#ff9900] uppercase font-black tracking-widest text-[10px]">Simple Process</span>
+            <h2 class="text-2xl font-black text-gray-900 mt-1">How It Works</h2>
+            <p class="text-sm text-gray-500 mt-0.5">Get hired at Amazon in 3 easy steps</p>
+        </div>
+
+        <!-- Three Steps Cards matching Screenshot_5 -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-6 border border-gray-150 rounded-2xl shadow-sm bg-white flex flex-col justify-between text-left hover:shadow-md transition">
+                <div>
+                    <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center text-[#ff9900] mb-4">
+                        <i class="fas fa-clipboard-list text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">Step 01</span>
+                    <h3 class="font-extrabold text-base text-gray-900 mb-2 mt-0.5">Qualify</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Answer a few simple questions to find the best matched jobs in your area.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
+                    <span class="text-gray-400">Status: Pending</span>
+                    <a href="#application-form" class="text-orange-600 font-bold hover:underline">Next &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="p-6 border border-gray-150 rounded-2xl shadow-sm bg-white flex flex-col justify-between text-left hover:shadow-md transition">
+                <div>
+                    <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center text-[#ff9900] mb-4">
+                        <i class="fas fa-edit text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">Step 02</span>
+                    <h3 class="font-extrabold text-base text-gray-900 mb-2 mt-0.5">Apply</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Submit your contact info. Amazon recruiters will call you within 24 hours.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
+                    <span class="text-gray-400">Status: Pending</span>
+                    <a href="#application-form" class="text-orange-600 font-bold hover:underline">Next &rarr;</a>
+                </div>
+            </div>
+
+            <div class="p-6 border border-gray-150 rounded-2xl shadow-sm bg-white flex flex-col justify-between text-left hover:shadow-md transition">
+                <div>
+                    <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                        <i class="fas fa-check-double text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">Step 03</span>
+                    <h3 class="font-extrabold text-base text-gray-900 mb-2 mt-0.5">Get Hired</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Schedule background check orientation parameters. Start earning from Day 1.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
+                    <span class="text-emerald-600 font-extrabold flex items-center space-x-1">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Ready</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -->
+    <!-- 4. Jobs Available Section (Layout and split imagery matching Screenshot_5) -->
+    <section class="py-12 bg-gray-100 border-t border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <span class="text-[#ff9900] uppercase font-black tracking-widest text-[10px]">Open Positions</span>
+                <h2 class="text-2xl font-black text-gray-900 mt-1">Jobs Available Right Now</h2>
+                <p class="text-sm text-gray-500">Find active listings inside your residential territory</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Visual Split Grid matching the exact images from Screenshot_5 -->
+                <div class="md:col-span-5 grid grid-rows-2 gap-4">
+                    <!-- Image 1: Warehouse / Storage Interior -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-md h-36 border border-gray-200">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&h=300&q=80" 
+                             alt="Amazon Warehouse Interior Layout" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Image 2: Shipping Center boxes -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-md h-36 border border-gray-200">
+                        <img src="https://images.unsplash.com/photo-1566576912321-d58def7a3688?auto=format&fit=crop&w=500&h=200&q=80" 
+                             alt="Amazon Packing Materials" 
+                             class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- Job 3: Housekeeping -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://busybeecleaningcompany.com/wp-content/uploads/2023/01/iStock-906777508-e1564417323957.jpg" alt="Housekeeping">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Hospitality</div>
-                    </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">Premium Hotels</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Professional Housekeeper</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Provide luxury services for world-class hospitality groups. Flexible shifts and immediate start available.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$18.75/hr</span>
+                <!-- Right Side Job List Grid -->
+                <div class="md:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-left">
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-warehouse text-sm"></i>
                             </div>
-                            <a href="https://www.af9m8trk.com/TCL11YFZ/YS1128DA/?s1=FB_sahin" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Warehouse</h4>
+                                <p class="text-xs text-green-600 font-semibold">$18.50/hr &bull; Hot</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-truck text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Delivery Driver</h4>
+                                <p class="text-xs text-green-600 font-semibold">$20.00/hr &bull; Active</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-laptop text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Remote/WFH</h4>
+                                <p class="text-xs text-green-600 font-semibold">$19.00/hr &bull; Flex</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-tools text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Maintenance</h4>
+                                <p class="text-xs text-green-600 font-semibold">$21.00/hr &bull; Urgent</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-user-friends text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Corporate</h4>
+                                <p class="text-xs text-green-600 font-semibold">$22.00/hr</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-50 text-[#ff9900] rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-headset text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-950">Customer Service</h4>
+                                <p class="text-xs text-green-600 font-semibold">$18.00/hr</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Job 4: Dollar Tree -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://cdn.phenompeople.com/CareerConnectResources/DTYDTJUS/images/TalentCommunity-1704911657639-1705074753089.png" alt="Dollar Tree">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Retail</div>
-                    </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">Consumer Goods</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Retail Sales Associate</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Engage with customers in a fast-paced retail environment. Great career advancement into management.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$16.50/hr</span>
-                            </div>
-                            <a href="https://aff2sweeps.com/go?c=5464&p=54170&sid=wadud" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job 5: Work From Home -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://jobs.workingsolutions.com/wp-content/uploads/2025/07/FlexibleWFHJobsThatMatchYourSkillsStrengthsAndScheduleFeaturedImage.jpg" alt="WFH">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Remote</div>
-                    </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">Customer Care</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Remote Solutions Specialist</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Work from the comfort of your home. Equipment provided for qualified candidates. Training included.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$22.00/hr</span>
-                            </div>
-                            <a href="https://www.af9m8trk.com/TCL11YFZ/1QE12Q9Z/?s1=FB_ridoy" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job 6: Kelly -->
-                <div class="job-card bg-white rounded-[2.5rem] overflow-hidden">
-                    <div class="job-image-container">
-                        <img src="https://www.gettoknowmontco.com/wp-content/uploads/2018/08/Kelly-Mobile-Van-1.png" alt="Kelly Services">
-                        <div class="absolute top-6 right-6 bg-navy-900/90 backdrop-blur-md text-gold-500 text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest">Staffing</div>
-                    </div>
-                    <div class="p-10">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-gold-600 text-[10px] font-black uppercase tracking-widest">Professional Services</span>
-                        </div>
-                        <h3 class="text-2xl font-black text-navy-900 mb-4 leading-tight">Kelly Staffing Coordinator</h3>
-                        <p class="text-slate-500 text-sm mb-8 leading-relaxed">Join a global leader in workforce solutions. Connect top talent with Fortune 500 companies today.</p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <div>
-                                <span class="text-slate-400 text-[9px] font-black block uppercase tracking-tighter mb-1">Estimated Pay</span>
-                                <span class="text-navy-900 font-black text-xl">$48k - $60k</span>
-                            </div>
-                            <a href="https://www.aplfb8trk.com/3NDLLF2P/C3NJJ1P/?source_id=FB&sub1=asgor" target="_blank" class="gold-button px-7 py-3.5 rounded-2xl text-[10px] uppercase shadow-md">Apply Now</a>
-                        </div>
+                    <!-- ✅ Requirement 3: Job Category CTA Button -->
+                    <div class="text-center md:text-left">
+                        <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="inline-flex items-center space-x-2.5 amazon-orange amazon-orange-hover text-black font-extrabold px-8 py-3.5 rounded-xl shadow-md transition transform hover:scale-[1.02]">
+                            <i class="fas fa-search text-sm"></i>
+                            <span>Browse All Jobs — Free!</span>
+                        </a>
                     </div>
                 </div>
 
@@ -310,97 +364,481 @@
         </div>
     </section>
 
-    <section class="py-24 bg-navy-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="grid grid-cols-6 h-full w-full">
-                <div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class="border-r border-white/20"></div>
-                <div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class=""></div>
+    <!-- Stat Bar matching Screenshot_5 -->
+    <div class="amazon-bg-dark text-gray-400 py-4 text-xs border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 flex justify-around text-center">
+            <div><strong class="text-white block text-lg font-black">12,966</strong> Applied This Month</div>
+            <div><strong class="text-white block text-lg font-black">4.8/5</strong> Employee Rating</div>
+            <div><strong class="text-white block text-lg font-black">$3,000</strong> Max Sign-On Bonus</div>
+        </div>
+    </div>
+
+    <!-- -->
+    <!-- 5. Testimonials Section (Based on Screenshot_5 & Screenshot_9_2) -->
+    <section class="py-16 bg-white max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <span class="text-[#ff9900] uppercase font-bold tracking-widest text-xs">Real Employees</span>
+            <h2 class="text-2xl font-black text-gray-900 mt-1">What Amazon Employees Say</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <!-- Jennifer S -->
+            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-150 relative">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-700 text-xs">JS</div>
+                        <div>
+                            <h4 class="font-extrabold text-xs text-gray-950">Jennifer S.</h4>
+                            <p class="text-[9px] text-gray-400">Nashville, TN &bull; Hired</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center space-x-0.5">
+                        <i class="fas fa-check-circle"></i><span>Verified</span>
+                    </span>
+                </div>
+                <div class="flex text-amber-400 text-[10px] mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-xs text-gray-600 italic leading-relaxed">"I applied online and got a callback within 2 days! The process was super easy and now I'm working at my local fulfillment center earning great pay with benefits."</p>
+            </div>
+
+            <!-- Marcus D -->
+            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-150 relative">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-700 text-xs">MD</div>
+                        <div>
+                            <h4 class="font-extrabold text-xs text-gray-950">Marcus D.</h4>
+                            <p class="text-[9px] text-gray-400">Orlando, FL &bull; Hired</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center space-x-0.5">
+                        <i class="fas fa-check-circle"></i><span>Verified</span>
+                    </span>
+                </div>
+                <div class="flex text-amber-400 text-[10px] mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-xs text-gray-600 italic leading-relaxed">"Amazon jobs changed my life. I found a delivery driver position close to home. The sign-on bonus was real, and I started within a week of applying."</p>
+            </div>
+
+            <!-- Rachel P -->
+            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-150 relative">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-700 text-xs">RP</div>
+                        <div>
+                            <h4 class="font-extrabold text-xs text-gray-950">Rachel P.</h4>
+                            <p class="text-[9px] text-gray-400">Seattle, WA &bull; Hired</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center space-x-0.5">
+                        <i class="fas fa-check-circle"></i><span>Verified</span>
+                    </span>
+                </div>
+                <div class="flex text-amber-400 text-[10px] mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-xs text-gray-600 italic leading-relaxed">"Found a work-from-home customer service role. The benefits package is incredible - health insurance, 401k, and even college tuition assistance!"</p>
             </div>
         </div>
+
+        <!-- Rating breakdown block -->
+        <div class="max-w-sm mx-auto bg-gray-50 border border-gray-150 rounded-2xl p-5 text-center">
+            <h4 class="font-black text-2xl text-gray-900">4.8</h4>
+            <div class="flex justify-center text-yellow-400 text-xs my-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-[10px] text-gray-400 mb-4">Based on 1,241 verified reviews</p>
+            <div class="space-y-2 text-[11px]">
+                <div class="flex items-center">
+                    <span class="w-6 text-left text-gray-500">5 ★</span>
+                    <div class="flex-1 bg-gray-200 h-2 rounded mx-2 overflow-hidden"><div class="bg-amber-400 h-full" style="width: 88%"></div></div>
+                    <span class="w-6 text-right text-gray-400">88%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="w-6 text-left text-gray-500">4 ★</span>
+                    <div class="flex-1 bg-gray-200 h-2 rounded mx-2 overflow-hidden"><div class="bg-amber-400 h-full" style="width: 9%"></div></div>
+                    <span class="w-6 text-right text-gray-400">9%</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="w-6 text-left text-gray-500">3 ★</span>
+                    <div class="flex-1 bg-gray-200 h-2 rounded mx-2 overflow-hidden"><div class="bg-amber-400 h-full" style="width: 3%"></div></div>
+                    <span class="w-6 text-right text-gray-400">3%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -->
+    <!-- 6. Form & Multi-Step Section (Based on Screenshot_6) -->
+    <section id="application-form" class="py-16 amazon-bg-navy text-white px-4 relative">
+        <div class="max-w-md mx-auto bg-white text-gray-900 rounded-2xl p-6 shadow-2xl relative border border-gray-800">
+            
+            <!-- Step 1: Input Form -->
+            <div id="step-1-form">
+                <span class="block text-center text-[#ff9900] uppercase font-black tracking-widest text-[10px] mb-1">⚡ Quick Application</span>
+                <h3 class="text-xl font-black text-center text-gray-900 mb-1">Start Your Amazon Application</h3>
+                <p class="text-xs text-gray-400 text-center mb-5">Takes less than 60 seconds &bull; Free to apply</p>
+                
+                <!-- Urgent Spot Left Notice matching Screenshot_6 warning pill -->
+                <div class="bg-red-50 border border-red-200 text-red-700 p-3 rounded-xl mb-6 text-xs flex items-start space-x-2">
+                    <i class="fas fa-fire text-red-500 mt-0.5 animate-pulse"></i>
+                    <div>
+                        <strong class="font-extrabold">Only 23 Spots left in Your Area!</strong>
+                        <p class="text-red-600/90 text-[10px] mt-0.5">Fast-tracking last active cohort application process now...</p>
+                    </div>
+                </div>
+
+                <!-- ✅ Requirement 4: On submission, trigger dynamic redirection then render Step 2 -->
+                <form id="submission-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-left">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="full-name" required placeholder="Your full name" class="w-full bg-gray-50 border border-gray-200 py-3 px-3 rounded-xl focus:outline-none focus:border-[#ff9900] focus:ring-1 focus:ring-[#ff9900] transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="email-address" required placeholder="your@email.com" class="w-full bg-gray-50 border border-gray-200 py-3 px-3 rounded-xl focus:outline-none focus:border-[#ff9900] focus:ring-1 focus:ring-[#ff9900] transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">
+                            ZIP Code <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="zip-code" required placeholder="e.g. 90210" class="w-full bg-gray-50 border border-gray-200 py-3 px-3 rounded-xl focus:outline-none focus:border-[#ff9900] focus:ring-1 focus:ring-[#ff9900] transition text-sm">
+                    </div>
+                    
+                    <button type="submit" class="w-full amazon-orange amazon-orange-hover text-black font-extrabold py-3.5 px-4 rounded-xl shadow-md text-sm transition transform active:scale-95 flex items-center justify-center space-x-2">
+                        <i class="fas fa-bolt"></i>
+                        <span>Apply Now — Find My Amazon Job</span>
+                    </button>
+                </form>
+
+                <div class="flex justify-center items-center gap-x-3 gap-y-1 flex-wrap text-[9px] text-gray-400 mt-4 border-t border-gray-100 pt-3 font-semibold uppercase tracking-wider">
+                    <span><i class="fas fa-shield-alt text-green-500 mr-0.5"></i> Secure</span>
+                    <span><i class="fas fa-lock text-green-500 mr-0.5"></i> No Spam</span>
+                    <span><i class="fas fa-flag-usa text-green-500 mr-0.5"></i> US Only</span>
+                </div>
+            </div>
+
+            <!-- Pre-loader spinner visual state -->
+            <div id="loader-state" class="hidden text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ff9900] mb-4"></div>
+                <h4 class="font-bold text-gray-900 text-base">Verifying local cohort vacancies...</h4>
+                <p class="text-xs text-gray-500 max-w-xs mx-auto mt-1">Checking active registration files inside your regional territory coordinates...</p>
+            </div>
+
+            <!-- Step 2: Confirmation View -->
+            <!-- ✅ Requirement 5: Continue to Step 2 Button with target Link -->
+            <div id="step-2-view" class="hidden text-center py-6">
+                <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-500 text-2xl mx-auto mb-4">
+                    <i class="fas fa-check-circle animate-bounce"></i>
+                </div>
+                <h3 class="text-xl font-black text-gray-950 mb-2">Pre-Check Complete!</h3>
+                <p class="text-[10px] text-gray-500 mb-1 uppercase font-extrabold text-[#ff9900] tracking-widest">Profile Registered</p>
+                <p class="text-xs text-gray-600 mb-6 leading-relaxed">Your eligibility matches current available target territories. Complete the registration queue matching protocol instantly.</p>
+                
+                <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="block w-full bg-green-600 hover:bg-green-700 text-white font-extrabold p-4 rounded-xl shadow-lg text-sm transition animate-pulse text-center uppercase tracking-wider">
+                    Continue to Step 2
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- -->
+    <!-- 7. Trusted & Secured Section (Based on Screenshot_6) -->
+    <section class="py-10 bg-white max-w-5xl mx-auto px-4 text-center">
+        <span class="text-gray-400 uppercase font-black tracking-widest text-[9px]">Trusted & Secured Gateway</span>
         
-        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">Ready to accelerate your career?</h2>
-            <p class="text-white/60 mb-12 text-lg max-w-xl mx-auto font-medium">Join over 50,000 professionals who found their dream role through our service hub this year.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="gold-button px-10 py-5 rounded-2xl text-xs uppercase tracking-widest shadow-2xl">Browse All 1,200+ Jobs</button>
-                <button class="bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-2xl text-xs uppercase tracking-widest font-black transition-all">Support Center</button>
+        <div class="grid grid-cols-3 md:grid-cols-7 gap-3 items-center justify-center mt-6">
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-shield-alt"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">SSL Secured</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-check-circle"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">Verified Jobs</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-flag-usa"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">US Residents</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-user-lock"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">Privacy</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-shipping-fast"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">Fast Hiring</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-ban"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">No Fees</span>
+            </div>
+            <div class="flex flex-col items-center p-2 border border-gray-100 rounded-xl bg-gray-50">
+                <div class="w-8 h-8 bg-amber-50 text-[#ff9900] rounded-full flex items-center justify-center text-xs mb-1"><i class="fas fa-gavel"></i></div>
+                <span class="text-[8px] text-gray-500 font-bold uppercase tracking-wider">EEOC OK</span>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center gap-3 flex-wrap mt-6 pt-4 border-t border-gray-100 text-gray-400">
+            <span class="bg-gray-100 px-3 py-1 rounded text-[9px] font-bold uppercase tracking-widest border border-gray-200">Norton Secured</span>
+            <span class="bg-gray-100 px-3 py-1 rounded text-[9px] font-bold uppercase tracking-widest border border-gray-200">McAfee Safe</span>
+            <span class="bg-gray-100 px-3 py-1 rounded text-[9px] font-bold uppercase tracking-widest border border-gray-200">BBB Accredited</span>
+        </div>
+    </section>
+
+    <!-- 8. FAQ Section -->
+    <section class="py-12 bg-gray-50 max-w-4xl mx-auto px-4 border-t border-gray-200">
+        <div class="text-center mb-8">
+            <span class="text-[#ff9900] uppercase font-bold tracking-widest text-[10px]">Got Questions?</span>
+            <h2 class="text-xl font-black text-gray-900 mt-1">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-3 max-w-xl mx-auto text-left">
+            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                <button onclick="toggleAccordion(1)" class="w-full px-4 py-3.5 text-left font-bold text-xs text-gray-950 flex justify-between items-center hover:bg-gray-50">
+                    <span>Do I need prior experience to apply for Amazon jobs?</span>
+                    <i id="faq-icon-1" class="fas fa-plus text-[10px] text-gray-400"></i>
+                </button>
+                <div id="faq-body-1" class="max-h-0 overflow-hidden transition-all duration-300">
+                    <p class="px-4 pb-4 text-[11px] text-gray-600 leading-relaxed">No, prior experience is not required. Full training is provided from Day 1 for all entry positions.</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                <button onclick="toggleAccordion(2)" class="w-full px-4 py-3.5 text-left font-bold text-xs text-gray-950 flex justify-between items-center hover:bg-gray-50">
+                    <span>What is the starting hourly pay rate at Amazon?</span>
+                    <i id="faq-icon-2" class="fas fa-plus text-[10px] text-gray-400"></i>
+                </button>
+                <div id="faq-body-2" class="max-h-0 overflow-hidden transition-all duration-300">
+                    <p class="px-4 pb-4 text-[11px] text-gray-600 leading-relaxed">Base hourly pay starts at $18.00/hr, depending on your location and shifts, up to $25.00/hr.</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                <button onclick="toggleAccordion(3)" class="w-full px-4 py-3.5 text-left font-bold text-xs text-gray-950 flex justify-between items-center hover:bg-gray-50">
+                    <span>How long does the qualification process take?</span>
+                    <i id="faq-icon-3" class="fas fa-plus text-[10px] text-gray-400"></i>
+                </button>
+                <div id="faq-body-3" class="max-h-0 overflow-hidden transition-all duration-300">
+                    <p class="px-4 pb-4 text-[11px] text-gray-600 leading-relaxed">The initial eligibility check takes less than 60 seconds. Recruitment queues match instantly.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white pt-24 pb-12 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-8">
-                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <span class="text-xl font-black tracking-tighter text-navy-900">SERVICE FINDER</span>
-                    </div>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
-                        The premium gateway for career seekers looking for verified and high-paying roles across the United States.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 hover:bg-gold-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 hover:bg-gold-500 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 hover:bg-gold-500 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-navy-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8">Quick Links</h4>
-                    <ul class="space-y-4 text-xs font-bold text-slate-500 uppercase tracking-widest">
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Search Openings</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Federal Careers</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Remote Opportunities</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Employer Portal</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-navy-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8">Career Sectors</h4>
-                    <ul class="space-y-4 text-xs font-bold text-slate-500 uppercase tracking-widest">
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Logistics & Supply</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Customer Solutions</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Hospitality Mgmt</a></li>
-                        <li><a href="#" class="hover:text-gold-600 transition-colors">Skilled Trades</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-navy-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8">Newsletter</h4>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-widest">GET THE LATEST JOB ALERTS</p>
-                    <div class="relative">
-                        <input type="email" placeholder="Email Address" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-xs focus:outline-none focus:border-gold-500 transition-all">
-                        <button class="absolute right-2 top-2 bg-navy-900 text-gold-500 px-4 py-2 rounded-lg hover:bg-navy-800 transition-all">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
+    <!-- -->
+    <!-- 9. Final CTA Footer Banner Section (Based on Screenshot_6) -->
+    <section class="py-16 amazon-bg-dark text-white text-center px-4 border-b border-gray-800">
+        <div class="max-w-xl mx-auto">
+            <div class="w-12 h-12 bg-amber-500/20 text-[#ff9900] rounded-xl flex items-center justify-center text-lg mx-auto mb-4 border border-orange-500/20">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            
+            <h2 class="text-2xl md:text-3xl font-black mb-3">Don't Miss Your Amazon Job Opportunity!</h2>
+            <p class="text-xs text-gray-400 max-w-sm mx-auto mb-4">Only 23 active openings left in your local region today. Next recruitment cohort deadlines tonight.</p>
+            
+            <!-- Countdown Banner matching Screenshot_6 style -->
+            <div class="flex justify-center items-center space-x-2 mb-6">
+                <span id="footer-hours" class="font-extrabold text-[#ff9900] text-xs bg-black/40 border border-gray-800 rounded px-2 py-1">02h</span>
+                <span id="footer-minutes" class="font-extrabold text-[#ff9900] text-xs bg-black/40 border border-gray-800 rounded px-2 py-1">48m</span>
+                <span id="footer-seconds" class="font-extrabold text-[#ff9900] text-xs bg-black/40 border border-gray-800 rounded px-2 py-1">35s</span>
             </div>
 
-            <div class="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-black text-slate-400 uppercase tracking-[0.3em]">
-                <span>&copy; 2026 U.S. SERVICE FINDER. ALL RIGHTS RESERVED.</span>
-                <div class="flex gap-8">
-                    <a href="#" class="hover:text-gold-600">Privacy Policy</a>
-                    <a href="#" class="hover:text-gold-600">Terms of Use</a>
-                    <a href="#" class="hover:text-gold-600">Trust Center</a>
+            <!-- ✅ Requirement 6: Final CTA Button -->
+            <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="inline-flex items-center space-x-2 amazon-orange amazon-orange-hover text-black font-black text-base px-8 py-4 rounded-xl shadow-lg hover:scale-102 transition max-w-sm w-full justify-center">
+                <i class="fas fa-check-circle"></i>
+                <span>Apply for My Amazon Job Now</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 10. Footer Section (Based on Screenshot_6) -->
+    <footer class="bg-[#11161d] text-gray-500 py-10 px-4 text-xs border-t border-gray-900">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 text-left">
+            <div>
+                <div class="flex items-center space-x-2 mb-3">
+                    <i class="fab fa-amazon text-lg text-gray-400"></i>
+                    <span class="font-extrabold text-sm text-white">Jobs<span class="text-[#ff9900]">Alert</span></span>
                 </div>
+                <p class="leading-relaxed text-[11px]">Connecting US-based candidates directly with official local Amazon employment onboarding queues.</p>
             </div>
+            <div>
+                <h5 class="font-bold text-white uppercase text-[10px] mb-2">Links</h5>
+                <ul class="space-y-1 text-[11px]">
+                    <li><a href="#application-form" class="hover:text-white">Apply Today</a></li>
+                    <li><a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-white uppercase text-[10px] mb-2">Privacy & Terms</h5>
+                <ul class="space-y-1 text-[11px]">
+                    <li><a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="hover:text-white">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-white uppercase text-[10px] mb-2">Support</h5>
+                <p class="text-[11px]">Mon-Fri: 8am - 6pm EST<br>24/7 Active Auto Matching Queues</p>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto border-t border-gray-800 pt-4 text-[10px] text-gray-600 leading-relaxed text-left">
+            <strong class="text-gray-500 block mb-1">Disclaimer:</strong>
+            This website is an independent recruitment matching entity. We are not directly affiliated with, authorized, or endorsed by Amazon Inc. All logos and registered trademarks belong to their respective owners. Variable estimates based on localization demand.
+            <p class="mt-4 text-center font-bold">&copy; 2026 JobsAlert Careers Placement Services. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- ✅ Requirement 7: Mobile Sticky Bar -->
+    <div class="sticky-mobile fixed bottom-0 left-0 right-0 amazon-bg-navy p-3 border-t border-gray-800 z-40 justify-center items-center md:hidden shadow-2xl">
+        <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="w-full amazon-orange amazon-orange-hover text-black font-extrabold py-3 rounded-xl text-center shadow-lg block text-xs animate-pulse">
+            Apply for My Amazon Job
+        </a>
+    </div>
+
+    <!-- -->
+    <!-- ✅ Requirement 8: Exit Intent Popup (Optimized with a 50 second mobile/timed fallback) -->
+    <div id="exit-popup" class="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white text-gray-900 rounded-2xl p-6 max-w-sm w-full text-center relative border-4 border-[#ff9900] shadow-2xl">
+            <!-- Close Trigger -->
+            <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-lg cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="text-red-500 text-3xl mb-2">
+                <i class="fas fa-bell animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-black text-red-600 mb-1 tracking-tight">WAIT! Don't Leave!</h3>
+            <p class="text-xs font-bold mb-4 text-gray-750">Your application queue priority is about to expire!</p>
+            
+            <!-- Warning block matching Screenshot_9_2 layout -->
+            <div class="bg-amber-50 p-4 rounded-xl mb-4 text-[11px] text-left border border-amber-200">
+                <p class="font-black text-center text-orange-600 mb-1 flex items-center justify-center space-x-1 uppercase tracking-widest text-[9px]">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Urgent Warning</span>
+                </p>
+                Only a few active onboarding files remaining in your zip territory boundary today. Finalize verification to reserve priority.
+            </div>
+
+            <!-- Popup CTA Button with Tracking Link -->
+            <a href="https://www.af9m8trk.com/TCL11YFZ/PL6125DB/?s1=wadud" target="_blank" onclick="redirectToOffer()" class="block w-full amazon-orange amazon-orange-hover text-black font-black py-4 rounded-xl shadow-md text-sm uppercase tracking-wider transition animate-pulse">
+                Apply for My Free Amazon Job!
+            </a>
+            <button onclick="closePopup()" class="text-[10px] text-gray-400 underline mt-3.5 block mx-auto hover:text-gray-600 uppercase tracking-widest font-extrabold">
+                No thanks, I don't want a job
+            </button>
+        </div>
+    </div>
+
+    <!-- -->
+    <!-- JavaScript Controllers -->
     <script>
-        // Smooth scroll for anchors
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('full-name').value;
+            const email = document.getElementById('email-address').value;
+            const zip = document.getElementById('zip-code').value;
+
+            if (name && email && zip) {
+                // Show Loader State
+                document.getElementById('step-1-form').classList.add('hidden');
+                document.getElementById('loader-state').classList.remove('hidden');
+
+                // Open destination Link dynamically
+                redirectToOffer();
+
+                // Wait 1.5 seconds for match analysis flow
+                setTimeout(() => {
+                    document.getElementById('loader-state').classList.add('hidden');
+                    document.getElementById('step-2-view').classList.remove('hidden');
+                }, 1500);
+            }
+        }
+
+        // Accordion Controller
+        function toggleAccordion(index) {
+            const body = document.getElementById(`faq-body-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            if (body.style.maxHeight === '0px' || !body.style.maxHeight) {
+                body.style.maxHeight = '150px';
+                icon.classList.replace('fa-plus', 'fa-minus');
+            } else {
+                body.style.maxHeight = '0px';
+                icon.classList.replace('fa-minus', 'fa-plus');
+            }
+        }
+
+        // Exit Intent Pop-up Controllers
+        let popupTriggered = false;
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 20 && !popupTriggered) {
+                showPopup();
+            }
         });
+        
+        // Extended Backup timer: Wait 50 seconds instead of 45 seconds (5 more seconds)
+        setTimeout(() => {
+            if(!popupTriggered) showPopup();
+        }, 50000); 
+
+        function showPopup() {
+            document.getElementById('exit-popup').classList.remove('hidden');
+            popupTriggered = true;
+        }
+
+        function closePopup() {
+            document.getElementById('exit-popup').classList.add('hidden');
+        }
+
+        // Shared dynamic countdown clock
+        let hr = 2, min = 48, sec = 35;
+        const countdownInterval = setInterval(() => {
+            sec--;
+            if (sec < 0) { sec = 59; min--; }
+            if (min < 0) { min = 59; hr--; }
+            if (hr < 0) { clearInterval(countdownInterval); return; }
+            
+            const hoursVal = String(hr).padStart(2, '0');
+            const minutesVal = String(min).padStart(2, '0');
+            const secondsVal = String(sec).padStart(2, '0');
+
+            document.getElementById('hours').innerText = hoursVal;
+            document.getElementById('minutes').innerText = minutesVal;
+            document.getElementById('seconds').innerText = secondsVal;
+
+            document.getElementById('footer-hours').innerText = hoursVal + 'h';
+            document.getElementById('footer-minutes').innerText = minutesVal + 'm';
+            document.getElementById('footer-seconds').innerText = secondsVal + 's';
+        }, 1000);
+
+        // Automatic slideshow script logic for the top-right job visual card widget
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide-item');
+        const roleTitles = ["Fulfillment Associate", "Sortation Associate", "Delivery Operations"];
+        const rolePays = ["$18.50/hr", "$19.00/hr", "$20.00/hr"];
+
+        setInterval(() => {
+            slides[currentSlideIndex].classList.remove('opacity-100');
+            slides[currentSlideIndex].classList.add('opacity-0');
+            
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            
+            slides[currentSlideIndex].classList.remove('opacity-0');
+            slides[currentSlideIndex].classList.add('opacity-100');
+            
+            // Seamlessly swap role titles & compensation matching the newly selected active slide image
+            document.getElementById('slide-role-title').innerText = roleTitles[currentSlideIndex];
+            document.getElementById('slide-role-pay').innerText = rolePays[currentSlideIndex];
+        }, 4000);
     </script>
 </body>
 </html>
